@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
-	validate_format_of :mail, with: /regex/i
+	validate :mail, format: with: /regex/i
 	belongs_to :projets
 end

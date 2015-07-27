@@ -56,22 +56,21 @@ Rails.application.routes.draw do
 	root 'projet#index'
 
 	# Projet
-	get 'projet/'            => 'projet#index'
-	get 'projet/:id'         => 'projet#show', as: 'projet'
+	get 'projet/:id'         => 'projet#show'
 	get 'projet/new'         => 'projet#new'
 	get 'projet/:id/update'  => 'projet#update'
 	get 'projet/:id/delete'  => 'projet#delete'
 
 	#User
 	get 'user/'              => 'user#index'
-	get 'user/:id'           => 'user#show', as: 'user'
+	get 'user/:id'           => 'user#show'
 	get 'user/new'           => 'user#new'
 	get 'user/:id/update'    => 'user#update'
 	get 'user/:id/delete'    => 'user#delete'
 
 	#Rendu
 	get 'rendu/'             => 'rendu#index'
-	get 'rendu/:id'          => 'rendu#show', as: 'rendu'
+	get 'rendu/:id'          => 'rendu#show'
 	get 'rendu/new'          => 'rendu#new'
 	get 'rendu/:id/update'   => 'rendu#update'
 	get 'rendu/:id/delete'   => 'rendu#delete'

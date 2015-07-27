@@ -1,0 +1,2 @@
+module RenduHelper
+end

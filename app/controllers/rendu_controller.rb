@@ -1,0 +1,2 @@
+class RenduController < ApplicationController
+end

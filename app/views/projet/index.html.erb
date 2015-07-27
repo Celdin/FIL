@@ -1,0 +1,13 @@
+<html>
+<head>
+</head>
+<body>
+	<% if Projet.all.size == 0 %>
+		<h1> Pas de projet</h1>
+	<% else %>
+		<% Projet.all.each do |projet| %>
+			<% projet.sujet %>
+		<% end %>
+	<% end %>
+</body>
+</html>

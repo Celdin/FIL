@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :projets
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,13 +55,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-	root 'projet#index'
-
-	# Projet
-	get 'projet/:id'         => 'projet#show'
-	get 'projet/new'         => 'projet#new'
-	get 'projet/:id/update'  => 'projet#update'
-	get 'projet/:id/delete'  => 'projet#delete'
+	root 'projets#index'
 
 	#User
 	get 'user/'              => 'user#index'

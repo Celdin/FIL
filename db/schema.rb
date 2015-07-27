@@ -11,11 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150726173240) do
+ActiveRecord::Schema.define(version: 20150727222653) do
 
   create_table "projets", force: true do |t|
-    t.string   "sujet"
     t.text     "description"
+    t.string   "sujet"
+    t.date     "date_rendu"
+    t.integer  "creator"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

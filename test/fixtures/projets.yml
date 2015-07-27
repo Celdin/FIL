@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  sujet: MyString
   description: MyText
+  sujet: MyString
+  date_rendu: 2015-07-28
+  creator: 1
 
 two:
-  sujet: MyString
   description: MyText
+  sujet: MyString
+  date_rendu: 2015-07-28
+  creator: 1

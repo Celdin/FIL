@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'projets#index'
+	
   resources :rendus
 
   resources :users
@@ -59,19 +62,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-	root 'projets#index'
-
-	#User
-	get 'user/'              => 'user#index'
-	get 'user/:id'           => 'user#show'
-	get 'user/new'           => 'user#new'
-	get 'user/:id/update'    => 'user#update'
-	get 'user/:id/delete'    => 'user#delete'
-
-	#Rendu
-	get 'rendu/'             => 'rendu#index'
-	get 'rendu/:id'          => 'rendu#show'
-	get 'rendu/new'          => 'rendu#new'
-	get 'rendu/:id/update'   => 'rendu#update'
-	get 'rendu/:id/delete'   => 'rendu#delete'
 end

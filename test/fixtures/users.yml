@@ -4,10 +4,8 @@ one:
   nom: MyString
   prenom: MyString
   mail: MyString
-  projets_id: 
 
 two:
   nom: MyString
   prenom: MyString
   mail: MyString
-  projets_id: 

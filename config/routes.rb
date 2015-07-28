@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :rendus
+
   resources :users
 
   resources :projets

@@ -1,0 +1,21 @@
+<%= form_for(@rendu) do |f| %>
+  <% if @rendu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rendu.errors.count, "error") %> prohibited this rendu from being saved:</h2>
+
+      <ul>
+      <% @rendu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.number_field :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

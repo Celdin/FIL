@@ -7,7 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header>
+    <h3><%= link_to "Accueil", root_path %>
+      <% if signed_in? %>
+      <%= link_to "Déconnexion", signout_path, :method => :delete %>
+      <% else %>
+      <%= link_to "S'identifier", signin_path %>
+      <% end %></h3>
+</header>
 <%= yield %>
 
 </body>

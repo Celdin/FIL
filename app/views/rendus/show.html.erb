@@ -4,11 +4,13 @@
 	<table>
 		<tbody>
 			<% @rendu.renduToUserLinks.each do |renduToUserLink| %>
-				<tr><td><%= link_to renduToUserLink.user.nom, renduToUserLink.user %></td></tr>
+				<tr><td><%= link_to renduToUserLink.user.nom + " " + link_to renduToUserLink.user.prenom, renduToUserLink.user %></td></tr>
 			<% end %>
 		</tbody>
 	</table>
-	<a href="<% @rendu.dataFilePath %>">Data</a>
+	<p>
+	<a href="<%= @rendu.data_file_path %>">Data</a>
+	</p>
   <strong>Note:</strong>
   <%= @rendu.note %>
 </p>

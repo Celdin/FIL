@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731081133) do
+ActiveRecord::Schema.define(version: 20150731211738) do
+
+  create_table "data_files", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "projet_to_user_links", force: true do |t|
     t.integer  "projet_id"
@@ -38,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150731081133) do
   create_table "rendus", force: true do |t|
     t.integer  "note"
     t.integer  "projet_id"
+    t.integer  "data_file_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

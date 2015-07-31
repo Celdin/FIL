@@ -32,7 +32,7 @@ class RendusController < ApplicationController
 	renduToUserLink.save
 	
 	rendu.projet = params[:id]
-	
+	uploadController = UploadController.upload(params[:upload])
     respond_to do |format|
       if @rendu.save
         format.html { redirect_to @rendu, notice: 'Rendu was successfully created.' }

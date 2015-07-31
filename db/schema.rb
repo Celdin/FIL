@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150731211738) do
   create_table "rendus", force: true do |t|
     t.integer  "note"
     t.integer  "projet_id"
-    t.integer  "data_file_id"
+    t.string   "data_file_path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

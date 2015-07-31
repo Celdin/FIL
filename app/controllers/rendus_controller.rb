@@ -31,8 +31,13 @@ class RendusController < ApplicationController
 	renduToUserLink.user = current_user
 	renduToUserLink.save
 	
-	rendu.projet = params[:id]
-	uploadController = UploadController.upload(params[:upload])
+	@rendu.projet = params[:id]
+	upload = params[:upload]
+	DataFile.save(upload)
+    name =  upload['datafile'].original_filename
+    directory = "public/data"
+    path = File.join(directory, name)
+	@rendu.dataFilePath = path
     respond_to do |format|
       if @rendu.save
         format.html { redirect_to @rendu, notice: 'Rendu was successfully created.' }
@@ -76,6 +81,6 @@ class RendusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rendu_params
-      params.require(:rendu).permit(:note)
+      params.permit(:note)
     end
 end

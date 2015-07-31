@@ -1,0 +1,2 @@
+class ProjetToUserLinksController < ApplicationController
+end

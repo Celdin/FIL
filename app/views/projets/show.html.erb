@@ -19,38 +19,38 @@
   <strong>Description:</strong><br/>
   <%= @projet.description %>
 </p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Date</th>
-	  <% if @projet.rendus.first.note != nil %>
-		<th>Note</th>
-	  <% end %>
-	</tr>
-  </thead>
-  <tbody>
-	<% @projet.rendus.each do |rendu| %>
-		<% users = rendu.renduToUserLinks %>
+<% if @projet.rendus.size > 0 %>
+	<table>
+	  <thead>
 		<tr>
-			<td>
-				<% users.each do |renduToUserLink| %>
-					<table>
-						<tbody>
-							<td><td><%= link_to renduToUserLink.user.nom + " " + renduToUserLink.user.prenom, renduToUserLink.user %></td></td>
-						</tbody>
-					</table>
-				<% end %>
-			</td>
-			<td><%= rendu.created_at %></td>
-			<% if @projet.rendus.first.note != nil %>
-				<td><%= rendu.note %></td>
-			<% end %>
+		  <th>Nom</th>
+		  <th>Date</th>
+		  <% if @projet.rendus.first.note != nil %>
+			<th>Note</th>
+		  <% end %>
 		</tr>
-	<% end %>
-  </tbody>
-</table>
-
+	  </thead>
+	  <tbody>
+		<% @projet.rendus.each do |rendu| %>
+			<% users = rendu.renduToUserLinks %>
+			<tr>
+				<td>
+					<% users.each do |renduToUserLink| %>
+						<table>
+							<tbody>
+								<td><td><%= link_to renduToUserLink.user.nom + " " + renduToUserLink.user.prenom, renduToUserLink.user %></td></td>
+							</tbody>
+						</table>
+					<% end %>
+				</td>
+				<td><%= rendu.created_at %></td>
+				<% if @projet.rendus.first.note != nil %>
+					<td><%= rendu.note %></td>
+				<% end %>
+			</tr>
+		<% end %>
+	  </tbody>
+	</table>
+<% end %>
 <%= link_to 'Edit', edit_projet_path(@projet) %> |
 <%= link_to 'Back', projets_path %>

@@ -26,6 +26,13 @@ class RendusController < ApplicationController
   def create
     @rendu = Rendu.new(rendu_params)
 
+	renduToUserLink = RenduToUserLink.new
+	renduToUserLink.rendu = @rendu.id
+	renduToUserLink.user = current_user
+	renduToUserLink.save
+	
+	rendu.projet = params[:id]
+	
     respond_to do |format|
       if @rendu.save
         format.html { redirect_to @rendu, notice: 'Rendu was successfully created.' }

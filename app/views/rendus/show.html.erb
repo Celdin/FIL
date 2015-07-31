@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+	<table>
+		<tbody>
+			<% @rendu.renduToUserLinks.each do |renduToUserLink| %>
+				<tr><td><%= link_to renduToUserLink.user.nom, renduToUserLink.user %></td></tr>
+			<% end %>
+		</tbody>
+	</table>
   <strong>Note:</strong>
   <%= @rendu.note %>
 </p>

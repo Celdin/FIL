@@ -11,6 +11,15 @@
   <tbody>
     <% @rendus.each do |rendu| %>
       <tr>
+		<td>
+			<table>
+				<tbody>
+					<% rendu.renduToUserLinks.each do |renduToUserLink| %>
+						<tr><td><%= link_to renduToUserLink.user.nom, renduToUserLink.user %></td></tr>
+					<% end %>
+				</tbody>
+			</table>
+		</td>
         <td><%= rendu.note %></td>
         <td><%= link_to 'Show', rendu %></td>
         <td><%= link_to 'Edit', edit_rendu_path(rendu) %></td>
